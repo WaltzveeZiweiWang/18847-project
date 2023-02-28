@@ -42,4 +42,10 @@ sudo luarocks install luasocket -y
 
 sudo dockerd &> /dev/null &
 
-docker swarm join --token SWMTKN-1-21657myz2dbxe3c5i5tleaplgwx0neoum629jqw8y05x6ap7pt-dtdcwx56z3vad8fpyocjdieqd 128.110.217.101:2377
+git clone https://github.com/delimitrou/DeathStarBench.git
+
+cd DeathStarBench/socialNetwork/
+
+
+
+sudo docker swarm join --token SWMTKN-1-56q4l18gusq8zhyoti5mb3zdzts4l2frhdmcs0rto4at7ti4o4-deshp4lgnc40hyu3dka5yf3jz 128.110.216.30:2377
