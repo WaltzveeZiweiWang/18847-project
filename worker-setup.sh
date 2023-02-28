@@ -6,7 +6,7 @@ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release -y
+    lsb-release
 
 sudo mkdir -m 0755 -p /etc/apt/keyrings
 
@@ -38,8 +38,8 @@ sudo apt-get install libz-dev -y
 
 sudo apt-get install luarocks -y
 
-sudo luarocks install luasocket -y
+sudo luarocks install luasocket
 
 sudo dockerd &> /dev/null &
 
-docker swarm join --token SWMTKN-1-21657myz2dbxe3c5i5tleaplgwx0neoum629jqw8y05x6ap7pt-dtdcwx56z3vad8fpyocjdieqd 128.110.217.101:2377
+sudo docker swarm join --token SWMTKN-1-21657myz2dbxe3c5i5tleaplgwx0neoum629jqw8y05x6ap7pt-dtdcwx56z3vad8fpyocjdieqd 128.110.217.101:2377
