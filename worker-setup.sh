@@ -42,4 +42,4 @@ sudo luarocks install luasocket
 
 sudo dockerd &> /dev/null &
 
-sudo docker swarm join --token SWMTKN-1-21657myz2dbxe3c5i5tleaplgwx0neoum629jqw8y05x6ap7pt-dtdcwx56z3vad8fpyocjdieqd 128.110.217.101:2377
+sudo docker swarm join --token SWMTKN-1-2gmvwhhxpznovuhu6p8xu23zpda1plnfknel77iopuoguq2qgt-alakwpf2ct781bvqu9y2455ri 128.110.217.165:2377
