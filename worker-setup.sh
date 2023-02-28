@@ -32,15 +32,13 @@ sudo docker run hello-world
 
 sudo apt-get update
 
-sudo apt-get install docker-compose-plugin
+sudo apt-get install docker-compose-plugin -y
 
-sudo apt-get install docker-compose-plugin
+sudo apt-get install libz-dev -y
 
-Sudo apt-get install libz-dev
+sudo apt-get install luarocks -y
 
-sudo apt-get install luarocks
-
-sudo luarocks install luasocket
+sudo luarocks install luasocket -y
 
 sudo dockerd &> /dev/null &
 
