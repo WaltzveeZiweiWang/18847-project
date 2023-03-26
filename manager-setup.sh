@@ -55,3 +55,11 @@ sudo apt-get update
 sudo apt install python3-pip
 
 pip3 install aiohttp
+
+cd ../wrk2
+
+make
+
+cd /users/waltzvee/18847-perf-scripts
+
+pip install -r requirements.txt
