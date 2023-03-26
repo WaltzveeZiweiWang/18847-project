@@ -46,6 +46,12 @@ git clone https://github.com/delimitrou/DeathStarBench.git
 
 cd DeathStarBench/socialNetwork/
 
-sudo docker swarm init --advertise-addr 128.110.217.101
+sudo docker swarm init --advertise-addr 10.10.1.1
 
-sudo docker swarm join --token SWMTKN-1-56q4l18gusq8zhyoti5mb3zdzts4l2frhdmcs0rto4at7ti4o4-deshp4lgnc40hyu3dka5yf3jz 128.110.216.30:2377
+sudo docker stack deploy --compose-file=docker-compose-swarm.yml profile-test
+
+sudo apt-get update
+
+sudo apt install python3-pip
+
+pip3 install aiohttp
