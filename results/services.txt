@@ -1,0 +1,37 @@
+getting service list...
+getting service constraints...
+getting service ps information...
++-----------+--------------+------------------------+--------+--------------+------+-----------------------+-------------+--------+--------+--------+--------+
+| Service # |  Service ID  |      Service Name      | Task # |      ID      | Node |      CurrentState     | Constraints | CPULim | MemLim | CPURes | MemRes |
++-----------+--------------+------------------------+--------+--------------+------+-----------------------+-------------+--------+--------+--------+--------+
+|     0     | 86wcmi18htwd |       cassandra        |   0    | kbbcsrxcdg8b |  25  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     2     | yiyxb1tsj9l4 |  compose-post-service  |   1    | ybmbm0rmy3xh |  16  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     3     | r7ich46t6jrt |  home-timeline-redis   |   2    | pxy6wzupjtl3 |  2   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     4     | z8d5io5r3n8p | home-timeline-service  |   3    | z0unni2x2xg7 |  28  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     5     | mp7lsrlbs4k5 |      jaeger-agent      |   4    | deh6t7tp772m |  24  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     6     | qeu7hmjnakqd |    jaeger-collector    |   5    | cuv9pk3inbnu |  1   | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     7     | hh4huy4mi4wn |      jaeger-query      |   6    | kb658oqgr9t4 |  31  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     8     | lu9ypwwifig1 |     media-frontend     |   7    | i8lp86ow2npm |  23  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     9     | se2916lo0wfe |    media-memcached     |   8    | sf8nksiz6sje |  5   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     10    | w1ge8bupmp07 |     media-mongodb      |   9    | fb3yxhs8kado |  21  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     11    | k1g7g6v4zcyr |     media-service      |   10   | roeh0pnamvka |  11  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     12    | jqdbz41evspc |    nginx-web-server    |   11   | 37ntw3wcwtb1 |  27  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     13    | cdhxvj8bplhs | post-storage-memcached |   12   | k919hgxmac1p |  30  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     14    | urzklf53083x |  post-storage-mongodb  |   13   | ek2ag25i08wg |  20  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     15    | yemdqw4xiipj |  post-storage-service  |   14   | fhl0a1ptpp7w |  26  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     16    | 8x6smeao5clp |  social-graph-mongodb  |   15   | n3tcfttk9n8f |  3   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     17    | 3ymx0x7hrcts |   social-graph-redis   |   16   | t6t4tmgr3oo4 |  14  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     18    | 94bwfw6ta2na |  social-graph-service  |   17   | o7ube8bnteyk |  4   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     19    | nfy6m19sa39x |      text-service      |   18   | 0kczypr06w8b |  6   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     20    | 778crsyscgcu |   unique-id-service    |   19   | q0kaqj07ubag |  22  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     21    | zu15oq1c2xu2 | url-shorten-memcached  |   20   | j0mmaebslef3 |  15  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     22    | yuvpzigrhaho |  url-shorten-mongodb   |   21   | zh5jnmfb1ev4 |  7   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     23    | ef5tivfh7w8o |  url-shorten-service   |   22   | n77md8gtz7a2 |  29  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     24    | dxgidczvi6zs |     user-memcached     |   23   | 4ptaxprcp5c9 |  13  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     25    | w222zjqlnf8f |  user-mention-service  |   24   | rwz5ux2u823e |  18  | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     26    | 0mhz7b5my32j |      user-mongodb      |   25   | t6hzrf23nrvq |  8   | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     27    | 6c35hg4sgyr9 |      user-service      |   26   | llve928lmnxb |  17  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     28    | eqn96drp6qrj | user-timeline-mongodb  |   27   | y8hbr5brp1bp |  19  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     29    | p9dnyu3dpvnp |  user-timeline-redis   |   28   | zg8my6knvxtc |  10  | Running 7 minutes ago |     None    |  None  |  None  |  None  |  None  |
+|     30    | 26uma2qkblvu | user-timeline-service  |   29   | 4x4hlrg2i27o |  9   | Running 6 minutes ago |     None    |  None  |  None  |  None  |  None  |
++-----------+--------------+------------------------+--------+--------------+------+-----------------------+-------------+--------+--------+--------+--------+
