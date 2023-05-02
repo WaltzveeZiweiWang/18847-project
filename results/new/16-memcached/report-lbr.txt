@@ -1,0 +1,552 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 20  of event 'cycles:ppp'
+# Event count (approx.): 4801952
+#
+# Children      Self  Command      Shared Object          Symbol                                 
+# ........  ........  ...........  .....................  .......................................
+#
+    78.00%     0.00%  mc-lrumaint  memcached              [.] lru_maintainer_thread
+            |
+            ---lru_maintainer_thread
+               |          
+               |--22.48%--slab_automove_run
+               |          fill_item_stats_automove
+               |          pthread_mutex_unlock@plt
+               |          
+               |--22.48%--pthread_mutex_unlock@plt
+               |          
+               |--22.48%--pthread_mutex_lock@plt
+               |          
+                --10.58%--lru_pull_tail.part.0
+                          pthread_mutex_lock@plt
+
+    44.95%    44.95%  mc-lrumaint  libpthread-2.31.so     [.] __pthread_mutex_unlock_usercnt
+            |
+            ---lru_maintainer_thread
+               |          
+               |--22.48%--slab_automove_run
+               |          fill_item_stats_automove
+               |          pthread_mutex_unlock@plt
+               |          
+                --22.48%--pthread_mutex_unlock@plt
+
+    44.95%     0.00%  mc-lrumaint  memcached              [.] pthread_mutex_unlock@plt
+            |
+            ---pthread_mutex_unlock@plt
+
+    34.05%    33.05%  mc-lrumaint  libpthread-2.31.so     [.] __pthread_mutex_lock
+            |          
+            |--33.05%--lru_maintainer_thread
+            |          |          
+            |          |--22.48%--pthread_mutex_lock@plt
+            |          |          
+            |           --10.58%--lru_pull_tail.part.0
+            |                     pthread_mutex_lock@plt
+            |          
+             --1.00%--__pthread_mutex_lock
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_clock_nanosleep
+                       common_nsleep
+                       hrtimer_nanosleep
+                       do_nanosleep
+                       schedule
+                       __sched_text_start
+                       finish_task_switch
+                       __perf_event_task_sched_in
+                       x86_pmu_enable
+                       intel_tfa_pmu_enable_all
+                       __intel_pmu_enable_all.constprop.23
+                       acpi_os_read_memory
+
+    33.05%     0.00%  mc-lrumaint  memcached              [.] pthread_mutex_lock@plt
+            |
+            ---pthread_mutex_lock@plt
+
+    22.48%     0.00%  mc-lrumaint  memcached              [.] slab_automove_run
+            |
+            ---slab_automove_run
+               fill_item_stats_automove
+               pthread_mutex_unlock@plt
+
+    22.48%     0.00%  mc-lrumaint  memcached              [.] fill_item_stats_automove
+            |
+            ---fill_item_stats_automove
+               pthread_mutex_unlock@plt
+
+    20.13%     0.00%  memcached    libevent-2.1.so.7.0.1  [.] event_base_loop
+            |
+            ---event_base_loop
+               |          
+               |--14.04%--event_active_nolock_@plt
+               |          
+                --6.09%--0x2de24
+                          epoll_wait@plt
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          syscall_trace_enter
+                          __secure_computing
+                          __seccomp_filter
+                          mei_cl_bus_exit
+
+    14.04%    14.04%  memcached    [unknown]              [.] 0000000000000000
+            |
+            ---main
+               event_base_loop
+               event_active_nolock_@plt
+
+    14.04%     0.00%  memcached    memcached              [.] main
+            |
+            ---main
+               event_base_loop
+               event_active_nolock_@plt
+
+    14.04%     0.00%  memcached    libevent-2.1.so.7.0.1  [.] event_active_nolock_@plt
+            |
+            ---event_active_nolock_@plt
+
+    10.58%     0.00%  mc-lrumaint  memcached              [.] lru_pull_tail.part.0
+            |
+            ---lru_pull_tail.part.0
+               pthread_mutex_lock@plt
+
+     6.85%     0.00%  memcached    [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--6.09%--syscall_trace_enter
+               |          __secure_computing
+               |          __seccomp_filter
+               |          mei_cl_bus_exit
+               |          
+                --0.76%--sys_epoll_wait
+                          ep_poll
+                          schedule_hrtimeout_range
+                          schedule_hrtimeout_range_clock
+                          schedule
+                          __sched_text_start
+                          finish_task_switch
+                          __perf_event_task_sched_in
+                          x86_pmu_enable
+                          intel_tfa_pmu_enable_all
+                          __intel_pmu_enable_all.constprop.23
+                          |          
+                           --0.69%--native_flush_tlb_one_user
+
+     6.85%     0.00%  memcached    [kernel.kallsyms]      [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+               |--6.09%--syscall_trace_enter
+               |          __secure_computing
+               |          __seccomp_filter
+               |          mei_cl_bus_exit
+               |          
+                --0.76%--sys_epoll_wait
+                          ep_poll
+                          schedule_hrtimeout_range
+                          schedule_hrtimeout_range_clock
+                          schedule
+                          __sched_text_start
+                          finish_task_switch
+                          __perf_event_task_sched_in
+                          x86_pmu_enable
+                          intel_tfa_pmu_enable_all
+                          __intel_pmu_enable_all.constprop.23
+                          |          
+                           --0.69%--native_flush_tlb_one_user
+
+     6.78%     6.09%  memcached    [kernel.kallsyms]      [k] mei_cl_bus_exit
+            |          
+            |--6.09%--event_base_loop
+            |          0x2de24
+            |          epoll_wait@plt
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          syscall_trace_enter
+            |          __secure_computing
+            |          __seccomp_filter
+            |          mei_cl_bus_exit
+            |          
+             --0.69%--mei_cl_bus_exit
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_epoll_wait
+                       ep_poll
+                       schedule_hrtimeout_range
+                       schedule_hrtimeout_range_clock
+                       schedule
+                       __sched_text_start
+                       finish_task_switch
+                       __perf_event_task_sched_in
+                       x86_pmu_enable
+                       intel_tfa_pmu_enable_all
+                       __intel_pmu_enable_all.constprop.23
+                       native_flush_tlb_one_user
+
+     6.09%     0.00%  memcached    libevent-2.1.so.7.0.1  [.] 0x000000000002de24
+            |
+            ---0x2de24
+               epoll_wait@plt
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               syscall_trace_enter
+               __secure_computing
+               __seccomp_filter
+               mei_cl_bus_exit
+
+     6.09%     0.00%  memcached    libevent-2.1.so.7.0.1  [.] epoll_wait@plt
+            |
+            ---epoll_wait@plt
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               syscall_trace_enter
+               __secure_computing
+               __seccomp_filter
+               mei_cl_bus_exit
+
+     6.09%     0.00%  memcached    [kernel.kallsyms]      [k] syscall_trace_enter
+            |
+            ---syscall_trace_enter
+               __secure_computing
+               __seccomp_filter
+               mei_cl_bus_exit
+
+     6.09%     0.00%  memcached    [kernel.kallsyms]      [k] __secure_computing
+            |
+            ---__secure_computing
+               __seccomp_filter
+               mei_cl_bus_exit
+
+     6.09%     0.00%  memcached    [kernel.kallsyms]      [k] __seccomp_filter
+            |
+            ---__seccomp_filter
+               mei_cl_bus_exit
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] do_syscall_64
+            |
+            ---do_syscall_64
+               sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] sys_clock_nanosleep
+            |
+            ---sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] common_nsleep
+            |
+            ---common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] hrtimer_nanosleep
+            |
+            ---hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] do_nanosleep
+            |
+            ---do_nanosleep
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] schedule
+            |
+            ---schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] __sched_text_start
+            |
+            ---__sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] finish_task_switch
+            |
+            ---finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+            |
+            ---__perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] x86_pmu_enable
+            |
+            ---x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] intel_tfa_pmu_enable_all
+            |
+            ---intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.23
+            |
+            ---__intel_pmu_enable_all.constprop.23
+               |          
+                --1.10%--acpi_os_read_memory
+
+     1.10%     1.10%  mc-lrumaint  [kernel.kallsyms]      [k] acpi_os_read_memory
+            |          
+             --1.00%--__pthread_mutex_lock
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_clock_nanosleep
+                       common_nsleep
+                       hrtimer_nanosleep
+                       do_nanosleep
+                       schedule
+                       __sched_text_start
+                       finish_task_switch
+                       __perf_event_task_sched_in
+                       x86_pmu_enable
+                       intel_tfa_pmu_enable_all
+                       __intel_pmu_enable_all.constprop.23
+                       acpi_os_read_memory
+
+     0.76%     0.01%  memcached    [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.23
+            |          
+             --0.76%--__intel_pmu_enable_all.constprop.23
+                       |          
+                        --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] sys_epoll_wait
+            |
+            ---sys_epoll_wait
+               ep_poll
+               schedule_hrtimeout_range
+               schedule_hrtimeout_range_clock
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] ep_poll
+            |
+            ---ep_poll
+               schedule_hrtimeout_range
+               schedule_hrtimeout_range_clock
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] schedule_hrtimeout_range
+            |
+            ---schedule_hrtimeout_range
+               schedule_hrtimeout_range_clock
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+            |
+            ---schedule_hrtimeout_range_clock
+               schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] schedule
+            |
+            ---schedule
+               __sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] __sched_text_start
+            |
+            ---__sched_text_start
+               finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] finish_task_switch
+            |
+            ---finish_task_switch
+               __perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] __perf_event_task_sched_in
+            |
+            ---__perf_event_task_sched_in
+               x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] x86_pmu_enable
+            |
+            ---x86_pmu_enable
+               intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.00%  memcached    [kernel.kallsyms]      [k] intel_tfa_pmu_enable_all
+            |
+            ---intel_tfa_pmu_enable_all
+               __intel_pmu_enable_all.constprop.23
+               |          
+                --0.69%--native_flush_tlb_one_user
+
+     0.76%     0.69%  memcached    [kernel.kallsyms]      [k] native_flush_tlb_one_user
+            |          
+             --0.69%--mei_cl_bus_exit
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_epoll_wait
+                       ep_poll
+                       schedule_hrtimeout_range
+                       schedule_hrtimeout_range_clock
+                       schedule
+                       __sched_text_start
+                       finish_task_switch
+                       __perf_event_task_sched_in
+                       x86_pmu_enable
+                       intel_tfa_pmu_enable_all
+                       __intel_pmu_enable_all.constprop.23
+                       native_flush_tlb_one_user
+
+     0.08%     0.07%  memcached    [kernel.kallsyms]      [k] native_sched_clock
+     0.01%     0.01%  mc-lrumaint  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%     0.00%  mc-lrumaint  [kernel.kallsyms]      [k] native_write_msr
+     0.00%     0.00%  memcached    [kernel.kallsyms]      [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
